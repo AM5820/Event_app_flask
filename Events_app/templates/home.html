@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+{% if not events %}
+	<div class="alert alert-danger text-center" role="alert">
+  		No available Events Right Now!!
+	</div>
+
+{%  else %}
+
+<div class="row">
+
+{% for event in events %}
+
+  <div class="col-sm-6">	
+		<div class="card text-center mb-2">
+			 <a href='#'>
+			 	<img class="card-img" style="height:20rem" src='static/uploads/{{event.image_file}}' alt="event ...">
+			 </a>
+
+			  <div class="card-body">
+			    <h5 class="card-title">{{event.name}}</h5>
+			    <p class="card-text">{{event.content}}</p>
+			    <p class="card-text"><small class="text-muted">{{event.address}}</small></p>
+
+			    <ul class="nav nav-pills card-header-pills text-center">
+			      <li class="nav-item">
+			      	<form method="POST" action="{{url_for('delete_event',event_id=event.id)}}">
+			      		<input type="submit" value='delete' class="btn btn-outline-danger" data-toggle="modal">
+			        	
+			      	</form>
+			        
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="{{url_for('update_event',event_id=event.id)}}">Update</a>
+			      </li>
+			    </ul>
+
+			  </div>
+		</div>
+ </div>
+
+{% endfor %}
+</div>
+
+	{% endif %}
+
+{% endblock content %}
+
+
+
+<script type="text/javascript">
+	
+	document.getElementByID('')
+
+</script>
