@@ -120,7 +120,8 @@
 	  	<div class="form-group">
 					{{form.photo.label(class="form-control-label")}}
 					{% if form.photo.errors %}
-				{{form.photo(class="form-control form-control-lg is-invalid")}}
+					<!-- add multiple to inputfield if album -->
+				<input type="file" class="form-control form-control-lg is-invalid" name="photo" >  
 				<div class="invalid-feedback">
 					{% for error in form.photo.errors %}
 						<span>{{ error }}</span>
@@ -129,7 +130,7 @@
 
 			{% else %}
 
-				{{form.photo(class="form-control form-control-lg")}}
+				<input type="file" class="form-control form-control-lg" name="photo" >
 			{% endif %}
 				</div>
 

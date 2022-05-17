@@ -16,7 +16,7 @@
 
   <div class="col-sm-6">	
 		<div class="card text-center mb-2">
-			 <a href='#'>
+			 <a href="{{url_for('show_event',event_id=event.id)}}">
 			 	<img class="card-img" style="height:20rem" src='static/uploads/{{event.image_file}}' alt="event ...">
 			 </a>
 
@@ -48,11 +48,3 @@
 	{% endif %}
 
 {% endblock content %}
-
-
-
-<script type="text/javascript">
-	
-	document.getElementByID('')
-
-</script>

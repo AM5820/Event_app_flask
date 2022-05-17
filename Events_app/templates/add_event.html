@@ -133,6 +133,24 @@
 			{% endif %}
 				</div>
 
+
+				<div class="form-group">
+					<label>Photo album</label>
+					{% if form.photo.errors %}
+					<input type="file" class="form-control form-control-lg is-invalid" name="photo" multiple>
+				<div class="invalid-feedback">
+					{% for error in form.photo.errors %}
+						<span>{{ error }}</span>
+					{% endfor %}
+				</div>
+
+			{% else %}
+
+					<input type="file" class="form-control form-control-lg" name="photo" multiple>
+					
+			{% endif %}
+				</div>
+
 				
 
 
